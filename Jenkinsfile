@@ -1,4 +1,7 @@
 pipeline {
+    environment{
+        
+    }
     agent any
 
     stages {
@@ -14,8 +17,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                USER=${DB_USER}
-                echo "$USER"
+                sh 'USER=${DB_USER}'
+                sh 'echo "$USER"'
             }
         }
         stage('Deploy') {
