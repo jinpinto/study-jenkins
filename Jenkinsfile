@@ -14,7 +14,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                USER=`echo "${DB_USER}"`
+                USER=echo "${DB_USER}"
                 echo "$USER"
             }
         }
